@@ -23,19 +23,26 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// InventoryClusterSpec defines the desired state of InventoryCluster
+// InventoryClusterSpec defines the desired state of InventoryCluster.
 type InventoryClusterSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// DisplayName is the human-readable name of the cluster set by the consumer of the cluster.
+	DisplayName string `json:"displayName"`
 
-	// Foo is an example field of InventoryCluster. Edit inventorycluster_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// ClusterManager is an reference to the ClusterManager that manages the cluster.
+	// Note: There must also be a `multicluster.x-k8s.io/cluster-manager` label on the InventoryCluster object matching the name of the ClusterManager.
+	ClusterManager ClusterManager `json:"clusterManager"`
 }
 
-// InventoryClusterStatus defines the observed state of InventoryCluster
+type ClusterManager struct {
+	// Name is the name of the cluster manager.
+	Name string `json:"name"`
+}
+
+// InventoryClusterStatus defines the observed state of InventoryCluster.
 type InventoryClusterStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// Version is the Kubernetes version of the cluster.
+	// +optional
+	Version string `json:"version,omitempty"`
 }
 
 //+kubebuilder:object:root=true
