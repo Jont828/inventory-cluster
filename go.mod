@@ -1,4 +1,4 @@
-module inventory-cluster
+module github.com/Jont828/inventory-cluster
 
 go 1.21
 
