@@ -1,0 +1,12 @@
+apiVersion: multicluster.x-k8s.io.multicluster.x-k8s.io/v1alpha1
+kind: InventoryCluster
+metadata:
+  labels:
+    app.kubernetes.io/name: inventorycluster
+    app.kubernetes.io/instance: inventorycluster-sample
+    app.kubernetes.io/part-of: inventory-cluster
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: inventory-cluster
+  name: inventorycluster-sample
+spec:
+  # TODO(user): Add fields here

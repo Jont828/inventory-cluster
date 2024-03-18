@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- multicluster.x-k8s.io_v1alpha1_inventorycluster.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
