@@ -1,6 +1,6 @@
 module inventory-cluster
 
-go 1.20
+go 1.21
 
 require (
 	k8s.io/apimachinery v0.28.3
